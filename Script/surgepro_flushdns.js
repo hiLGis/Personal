@@ -18,9 +18,9 @@ if ($trigger == "button") {
 $done({
 //title:"𝗦𝘂𝗿𝗴𝗲 𝗣𝗿𝗼:  "+startTime
     title:"𝗦𝘂𝗿𝗴𝗲 𝗣𝗿𝗼",
-    content:"Mitm:"+icon_status(mitm_status.enabled)+"  Rewrite:"+icon_status(rewrite_status.enabled)+"  Scripting:"+icon_status(scripting_status.enabled),
-    icon: params.icon,
-    "icon-color":params.color
+    content:`Running:  ${startTime}\n` + "Mitm:"+icon_status(mitm_status.enabled)+"  Rewrite:"+icon_status(rewrite_status.enabled)+"  Scripting:"+icon_status(scripting_status.enabled),
+    icon: icon_s?"waveform.circle":"waveform.circle.fill",
+   "icon-color":icon_s?"#CA8D4E":"#CA8D4E"
 });
 })();
 function icon_status(status){
@@ -59,4 +59,3 @@ function httpAPI(path = "", method = "POST", body = null) {
     });
   });
 }
- 
