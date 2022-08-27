@@ -1,0 +1,8 @@
+#! name = surge pro三合一
+#！desc = 运行时间+功能检测+配置重载
+
+[Panel]
+functionstatus = script-name=functionstatus, title="Surge", content="请刷新", update-interval=0
+
+[Script]
+functionstatus = type=generic,script-path=https://raw.githubusercontent.com/foloooxx/Surge/main/Panel/functionstatus.js
