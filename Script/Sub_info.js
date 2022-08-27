@@ -38,8 +38,8 @@ Sub_info = script-name=Sub_info,update-interval=86400
   let used = info.download + info.upload;
   let total = info.total;
   let expire = args.expire || info.expire;
-  let proportion = used / total;
-  let content = [`𝗨𝘀𝗲𝗱 : ${toPercent(proportion)} | 𝗔𝘃𝗹 : ${bytesToSize(total-used)}`];
+  #!let proportion = used / total;
+  let content = [`𝗨𝘀𝗲𝗱 : ${bytesToSize(used)} | ${bytesToSize(total)}`];
 
 /*
   if (resetDayLeft) {
@@ -149,8 +149,9 @@ function formatTime(time) {
   let day = dateObj.getDate();
   return year + "年" + month + "月" + day + "日";
 }
-
+ /*
 function toPercent(proportion) {
   const percent = Number(proportion*100).toFixed(2);
   return percent + "%";
 }
+*/
