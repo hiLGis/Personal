@@ -6,7 +6,7 @@
 #!https://raw.githubusercontent.com/SuperLingyun/surge/main/unlockvip.sgmodule
 #!https://raw.githubusercontent.com/chiupam/surge/main/Surge/Unblock.sgmodule
 #!https://raw.githubusercontent.com/rartv/SurgeScript/main/EmbyPremiere/EmbyPremiere.sgmodule
-#https://raw.githubusercontent.com/chiupam/surge/main/Surge/CamScanner.sgmodule
+#!https://raw.githubusercontent.com/chiupam/surge/main/Surge/CamScanner.sgmodule
 
 [Script]
 # WPS会员 (account.wps.cn,*account.wps.com)
