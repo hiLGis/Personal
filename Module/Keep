@@ -5,4 +5,4 @@
 keep = type=http-response,pattern=^https?:\/\/api\.gotokeep\.com\/(athena\/v\d\/people\/my|config\/v\d\/basic),requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Cuttlefish/raw/master/Script/keepStyle.js,script-update-interval=0
 
 [mitm]
-hostname = api.gotokeep.com
+hostname = %APPEND% api.gotokeep.com
