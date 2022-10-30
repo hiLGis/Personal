@@ -9,4 +9,4 @@
 
 单集评分 = type=http-response,pattern=^https?://ios\.prod\.ftl\.netflix\.com/iosui/warmer/.+type=show-ath,requires-body=1,max-size=0,script-path=https://hub.qste.com/Script/Netflix/RatingSeason.js
 [MITM]
-hostname = ios.prod.ftl.netflix.com
+hostname = %APPEND% ios.prod.ftl.netflix.com
