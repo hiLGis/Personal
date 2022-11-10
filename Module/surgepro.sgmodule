@@ -5,4 +5,4 @@
 functionstatus = script-name=functionstatus, title="Surge", content="请刷新", update-interval=0
 
 [Script]
-functionstatus = type=generic,script-path=https://raw.githubusercontent.com/hiLGis/Surge/main/Script/surgepro_flushdns.js
+functionstatus = type=generic,script-path=https://raw.githubusercontent.com/hiLGis/Surge/main/Script/surgepro_flushdns3.js
