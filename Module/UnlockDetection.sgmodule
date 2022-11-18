@@ -3,8 +3,8 @@
 
 [Panel]
 # 流媒体解锁检测
-策略面板 = script-name=解锁检测,update-interval=3600
+策略面板 = script-name=𝗖𝗵𝗲𝗰𝗸𝗶𝗻𝗴！,update-interval=3600
 
 [Script]
 # 流媒体解锁检测
-解锁检测 = type=generic,timeout=30,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/Stream-All.js,script-update-interval=0,argument=title=解锁检测&icon=lock.rotation.open&color=#97C30A
+𝗖𝗵𝗲𝗰𝗸𝗶𝗻𝗴！ = type=generic,timeout=30,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/Stream-All.js,script-update-interval=0,argument=title=解锁检测&icon=lock.rotation.open&color=#97C30A
