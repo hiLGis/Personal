@@ -17,8 +17,6 @@ WPS会员 = type=http-response,pattern=^https?:\/\/.*?account\.wps\.(com|cn)(:\d
 滴答清单=type=http-response,pattern=^https:\/\/(ticktick|dida365)\.com\/api\/v2\/user\/status,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Voldeemort/Surge/main/script/dida/dida.js,script-update-interval=0
 # 酷我音乐 (*.kuwo.cn, *.lrts.me)
 酷我音乐=type=http-response,pattern=^https?:\/\/.*\.(kuwo|lrts)\.(cn|me)\/(a\.p|music\.pay|(vip\/(v2|enc)\/(theme|user\/vip))|(EcomResource|(Mobile)?Ad)Serv(er|ice)).*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nameking77/Qx/main/rewrite/kw.js,script-update-interval=0 
-# 美图秀秀解锁VIP (api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com)
-美图秀秀解锁VIP = type=http-response,pattern=^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/,requires-body=1,script-path=https://raw.githubusercontent.com/28413761/QX/main/jiaoben/MeiTuXiuXiu.js,script-update-interval=0,max-size=0
 #轻颜相机解锁VIP (commerce-i18n-api.faceu.mobi,commerce-api.faceu.mobi)
 轻颜相机VIP= type=http-response,requires-body=1,max-size=0,pattern=^https:\/\/commerce-.*api\.faceu\.mobi\/commerce\/v1\/subscription\/user_info,script-path=https://raw.githubusercontent.com/SuperLingyun/surge/main/JS/qingyan.js
 # Xmind (www.xmind.cn, www.xmind.net)
@@ -37,4 +35,4 @@ EmbyPremiere.js = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/se
 Nicegram会员 = type=http-request,pattern=^https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\w+$,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/Nicegram/Script/Nicegram.js,script-update-interval=0
 
 [MITM]
-hostname = %APPEND% account.wps.cn,*account.wps.com,dida365.com, ticktick.com,*.kuwo.cn, *.lrts.me,api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com,commerce-i18n-api.faceu.mobi,commerce-api.faceu.mobi, www.xmind.cn, www.xmind.net,biz.caiyunapp.com, pan.baidu.com, api.shayujizhang.com,mb3admin.com,ap*.intsig.net,restore-access.indream.app
+hostname = %APPEND% account.wps.cn,*account.wps.com,dida365.com, ticktick.com,*.kuwo.cn, *.lrts.me,commerce-i18n-api.faceu.mobi,commerce-api.faceu.mobi, www.xmind.cn, www.xmind.net,biz.caiyunapp.com, pan.baidu.com, api.shayujizhang.com,mb3admin.com,ap*.intsig.net,restore-access.indream.app
