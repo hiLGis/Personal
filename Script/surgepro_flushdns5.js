@@ -11,7 +11,7 @@ if ($trigger == "button") await httpAPI("/v1/dns/flush");
 
   $done({
       title:"𝗦𝗨𝗥𝗚𝗘 𝗣𝗥𝗢 ®",
-      content:`启动时长：${startTime}`,
+      content:`启动时长：${startTime}\n`,
 		icon: params.icon,
 		"icon-color":params.color
     });
