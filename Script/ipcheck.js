@@ -20,7 +20,7 @@ $httpClient.get(url, function(error, response, data){
   body = {
     title: "𝗡𝗘𝗧𝗜𝗡𝗙𝗢",
     content: `IP：${ip} ➟ ${country}`,
-    icon: "aqi.medium",
+    icon: "mappin.and.ellipse",
     'icon-color': "#4169E1"
   }
   $done(body);
