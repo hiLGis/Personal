@@ -6,4 +6,4 @@
 Sub_info = script-name=Sub_info,update-interval=86400
 
 [Script]
-Sub_info = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/hiLGis/Surge/main/Script/Sub_info1.js,script-update-interval=0,argument=url= [机场NodeList] &title=𝘆𝘁𝗼𝗼𝗶𝗻𝗳𝗼&icon=cart.circle&color=#0047AB&reset_day=6
+Sub_info = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/hiLGis/Personal/main/Script/sub_info2.js,script-update-interval=0,argument=url= [机场NodeList] &title=𝘆𝘁𝗼𝗼𝗶𝗻𝗳𝗼&icon=cart.circle&color=#0047AB&reset_day=6
