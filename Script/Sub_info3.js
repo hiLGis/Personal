@@ -50,7 +50,6 @@ let args = getArgs();
   $done({
     title: `${args.title} ` + `|icon: args.icon || "airplane.circle" ,
     content: content.join("\n"),
-    icon: args.icon || "airplane.circle",
     "icon-color": args.color || "#007aff",
   });
 })();
