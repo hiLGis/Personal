@@ -48,7 +48,7 @@ let args = getArgs();
   minutes = minutes > 9 ? minutes : "0" + minutes;
 
   $done({
-    title: `${args.title} ` + `|icon: args.icon || "airplane.circle"`,
+    title: `${args.title} ` + `|icon:` + `args.icon || "airplane.circle"`,
     content: content.join("\n"),
     "icon-color": args.color || "#007aff",
   });
