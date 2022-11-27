@@ -39,7 +39,7 @@ let args = getArgs();
   let used = info.download + info.upload;
   let total = info.total;
   let expire = args.expire || info.expire;
-  let content = [`𝗨𝗦𝗘 : ${bytesToSize(used)} | ${bytesToSize(total)}`];
+  let content = [`𝙪𝙨𝙚 : ${bytesToSize(used)} | ${bytesToSize(total)}`];
 
 /*
   if (resetDayLeft) {
@@ -58,7 +58,7 @@ let args = getArgs();
   minutes = minutes > 9 ? minutes : "0" + minutes;
 
   $done({
-    title: `${args.title} ` + `| 𝗿𝗲𝘀𝗲𝘁 : ` + `${resetDayLeft} 𝗱𝗮𝘆`,
+    title: `${args.title} ` + `| 𝙧𝙚𝙨𝙚𝙩 : ` + `${resetDayLeft} 𝙙𝙖𝙮`,
     content: content.join("\n"),
     icon: args.icon || "airplane.circle",
     "icon-color": args.color || "#007aff",
