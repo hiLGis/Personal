@@ -7,8 +7,8 @@ const AREA_TEST_FILM_ID = 80018499
 ;(async () => {
   let result = {
     title: "Netflix",
-    icon: "play.circle",
-	  'icon-color':"#FF0000",
+    icon: args.icon || "airplane.circle",
+    "icon-color": args.color || "#007aff",
     content: '检测失败，请检查网络',
   }
   await test(FILM_ID)
