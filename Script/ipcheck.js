@@ -17,6 +17,13 @@ $httpClient.get(url, function(error, response, data){
     let city = jsonData.city
     let isp = jsonData.isp
     
+    if (typeof $argument != "undefined") {
+        let arg = Object.fromEntries($argument.split("&").map((item) => item.split("=")));
+        if (arg.title) panel.title = arg.title;
+        if (arg.icon) panel.icon = arg.icon;
+        if (arg.color) panel["icon-color"] = arg.color;
+        if (arg.server == "false") showServer = false;
+    }
   body = {
     title: "𝗡𝗘𝗧𝗜𝗡𝗙𝗢",
     content: `IP：${ip} ➟ ${country}`,
