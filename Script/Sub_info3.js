@@ -35,11 +35,12 @@ let args = getArgs();
   if (resetDayLeft) {
     content.push(`重置：剩余${resetDayLeft}天`);
   }
+*/
   if (expire) {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
-    content.push(`到期：${formatTime(expire)}`);
+    content.push(`𝗗𝗮𝘁𝗲：${formatTime(expire)}`);
   }
-*/
+
   let now = new Date();
   let hour = now.getHours();
   let minutes = now.getMinutes();
@@ -47,7 +48,7 @@ let args = getArgs();
   minutes = minutes > 9 ? minutes : "0" + minutes;
 
   $done({
-    title: `${args.title} ` + `| content: content.join("\n"),
+    title: `${args.title} ` + `|icon: args.icon || "airplane.circle" ,
     content: content.join("\n"),
     icon: args.icon || "airplane.circle",
     "icon-color": args.color || "#007aff",
