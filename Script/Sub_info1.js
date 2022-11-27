@@ -39,7 +39,7 @@ let args = getArgs();
   let used = info.download + info.upload;
   let total = info.total;
   let expire = args.expire || info.expire;
-  let content = [`𝗨𝘀𝗲𝗱 : ${bytesToSize(used)} | ${bytesToSize(total)}`];
+  let content = [`用量 : ${bytesToSize(used)} | ${bytesToSize(total)}`];
 
 /*
   if (resetDayLeft) {
