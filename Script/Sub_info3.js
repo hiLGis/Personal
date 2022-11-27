@@ -1,7 +1,7 @@
 /*
 模板来自@mieqq大佬（转大佬感谢：感谢@asukanana,感谢@congcong.）。
 感谢@mieqq大佬
-感谢@W cyber大佬的计算上的帮助。
+感谢@W cyber大佬的计算上的帮助。 
 Surge配置参考注释，
 示例↓↓↓  
 ----------------------------------------
@@ -20,7 +20,7 @@ Sub_info = script-name=Sub_info,update-interval=86400
 */
 
 let args = getArgs();
-
+ 
 (async () => {
   let info = await getDataInfo(args.url);
   if (!info) $done();
