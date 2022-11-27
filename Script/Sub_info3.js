@@ -3,7 +3,7 @@
 感谢@mieqq大佬
 感谢@W cyber大佬的计算上的帮助。
 Surge配置参考注释，
-示例↓↓↓ 
+示例↓↓↓  
 ----------------------------------------
 [Script]
 Sub_info = type=generic,timeout=10,script-path= https://raw.githubusercontent.com/hiLGis/Surge/main/Script/Sub_info1.js,script-update-interval=0,argument=url=[URL encode 后的机场节点链接]&reset_day=1&title=AmyInfo&icon=bonjour&color=#007aff
