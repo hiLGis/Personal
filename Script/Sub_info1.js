@@ -50,7 +50,7 @@ let args = getArgs();
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
     content.push(`到期：${formatTime(expire)}`);
   }
-*/
+
   let now = new Date();
   let hour = now.getHours();
   let minutes = now.getMinutes();
