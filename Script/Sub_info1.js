@@ -58,7 +58,7 @@ let args = getArgs();
   minutes = minutes > 9 ? minutes : "0" + minutes;
 
   $done({
-    title: `${args.title} ` + `| 𝙧𝙚𝙨𝙩 ：` + `${resetDayLeft} 𝔇`,
+    title: `${args.title} ` + `| 𝕣𝕖𝕤𝕖𝕥 ：` + `${resetDayLeft} 𝔇`,
     content: content.join("\n"),
     icon: args.icon || "airplane.circle",
     "icon-color": args.color || "#007aff",
