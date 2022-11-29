@@ -1,0 +1,9 @@
+#!name=Allow WiFi Access
+#!desc=为同一wi-fi上的其他设备提供HTTP (端口6152) 和SOCKS5 (端口6153) 代理。
+
+[General]
+http-listen = 0.0.0.0:6152
+socks5-listen = 0.0.0.0:6153
+allow-wifi-access = true
+wifi-access-http-port = 6152
+wifi-access-socks5-port = 6153
