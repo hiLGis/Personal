@@ -7,4 +7,4 @@
 
 [Script]
 # 流媒体解锁检测
-𝗖𝗵𝗲𝗰𝗸𝗶𝗻𝗴！ = type=generic,timeout=30,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/Stream-All.js,script-update-interval=0,argument=title=解锁检测&icon=lock.rotation.open&color=#97C30A
+𝗖𝗵𝗲𝗰𝗸𝗶𝗻𝗴！ = type=generic,timeout=30,script-path=https://raw.githubusercontent.com/hiLGis/Personal/main/Script/Stream-All.js,script-update-interval=0,argument=title=解锁检测&icon=lock.rotation.open&color=#97C30A
