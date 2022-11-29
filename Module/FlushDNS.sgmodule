@@ -1,0 +1,10 @@
+#!name=Panels@歐
+#!desc=FlushDNS
+
+[Panel]
+#FlushDNS
+SurgePro_FlushDNS=script-name=SurgePro_FlushDNS,update-interval=1
+
+[Script]
+#FlushDNS
+SurgePro_FlushDNS=type=generic,timeout=10,script-path=https://raw.githubusercontent.com/hiLGis/Personal/main/Script/surgepro_flushdns5.js,argument=icon=checkmark.seal=&color=#DC143C
