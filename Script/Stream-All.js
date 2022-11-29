@@ -49,7 +49,7 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
   hour = hour > 9 ? hour : "0" + hour;
   minutes = minutes > 9 ? minutes : "0" + minutes;
   let panel_result = {
-    title: `${args.title} | ${hour}:${minutes}` || `流媒体解锁查询 | ${hour}:${minutes}`,
+    title: `${args.title}` || `流媒体解锁查询 | ${hour}:${minutes}`,
     content: '',
     icon: args.icon || "play.circle",
     "icon-color": args.color || "#007aff",
