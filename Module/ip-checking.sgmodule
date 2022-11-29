@@ -1,0 +1,10 @@
+#!name=Panels@陽
+#!desc=节点信息
+
+[Panel]
+#节点信息
+Netinfo=script-name=Netinfo,title="𝗡𝗘𝗧𝗜𝗡𝗙𝗢",content="请刷新",style=info,update-interval=1
+
+[Script]
+#节点信息
+Netinfo=type=generic,timeout=3,script-path=https://raw.githubusercontent.com/hiLGis/Personal/main/Script/ipcheck.js
