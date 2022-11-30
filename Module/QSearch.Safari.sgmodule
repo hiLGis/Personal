@@ -18,9 +18,6 @@
 # trc: Google 译至中
 # tre: Google 译至英
 # trj: Google 译至日
-# dlc: DeepL 译至中
-# dle: DeepL 译至英
-# dlj: DeepL 译至日
 
 # db: 豆瓣搜索
 # zh: 知乎
@@ -40,7 +37,7 @@
 # tb: 淘宝
 # tm: 天猫
 
-# cpx：(cupfox)
+# cpx：cupfox
 # ac: Acfun
 # bli: 哔哩哔哩
 # ytb: YouTube
@@ -64,46 +61,34 @@
 # 无指令则转 google 搜索
 
 
-[Script]
-# dlc xxx (DeepL 译至中)
-DeepLtoChinese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlc(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
-
-# dle xxx (DeepL 译至英)
-DeepLtoEnglish = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dle(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
-
-# dlj xxx (DeepL 译至日)
-DeepLtoJapanese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlj(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
-
-
 [URL Rewrite]
-# > 图片
-# gi (Google 图片)
-^https:\/\/duckduckgo.com\/\?q=gi(\+|%20)([^&]+).+ https://www.google.com/search?&tbm=isch&q=$2 302
-# gh  (GitHub)
-^https:\/\/duckduckgo.com\/\?q=gh(\+|%20)([^&]+).+ https://github.com/search?q=$2 302
+# gi   (Google图片)
+^https:\/\/duckduckgo.com\/\?q=gi\+([^&]+).+ https://www.google.com/search?&tbm=isch&q=$1 302
+# gh   (GitHub)
+^https:\/\/duckduckgo.com\/\?q=gh\+([^&]+).+ https://github.com/search?q=$1 302
 # sof  (Stack Overflow)
-^https:\/\/duckduckgo.com\/\?q=sof(\+|%20)([^&]+).+ https://stackoverflow.com/search?q=$2 302
+^https:\/\/duckduckgo.com\/\?q=sof\+([^&]+).+ https://stackoverflow.com/search?q=$1 302
 # se  (StackExchange)
-^https:\/\/duckduckgo.com\/\?q=se(\+|%20)([^&]+).+ https://stackexchange.com/search?q=$2 302
+^https:\/\/duckduckgo.com\/\?q=se\+([^&]+).+ https://stackexchange.com/search?q=$1 302
 # wa  (WolframAlpha)
-^https:\/\/duckduckgo.com\/\?q=wa(\+|%20)([^&]+).+ https://www.wolframalpha.com/input/?i=$2 302
-# wiki (Wikipedia)
-^https:\/\/duckduckgo.com\/\?q=wiki(\+|%20)([^&]+).+ https://wikipedia.org/wiki/$2 302
-# wk  (Wikipedia 中文)
+^https:\/\/duckduckgo.com\/\?q=wa\+([^&]+).+ https://www.wolframalpha.com/input/?i=$1 302
+# wiki  (维基百科)
+^https:\/\/duckduckgo.com\/\?q=wiki(\+|%20)([^&]+).+ http://wikipedia.org/wiki/$2 302
+# wk  (维基中文)
 ^https:\/\/duckduckgo.com\/\?q=wk(\+|%20)([^&]+).+ https://zh.wikipedia.org/wiki/$2 302
 # mg  (Magi)
 ^https:\/\/duckduckgo.com\/\?q=mg(\+|%20)([^&]+).+ https://magi.com/search?q=$2 302
 
 
 # > 翻译
-# yd  (有道词典)
-^https:\/\/duckduckgo.com\/\?q=yd(\+|%20)([^&]+).+ https://dict.youdao.com/search?q=$2 302
-# trc (Google 译至中)
-^https:\/\/duckduckgo.com\/\?q=trc(\+|%20)([^&]+).+ https://translate.google.com/#view=home&op=translate&sl=auto&tl=zh-CN&text=$2 302
-# tre (Google 译至英)
-^https:\/\/duckduckgo.com\/\?q=tre(\+|%20)([^&]+).+ https://translate.google.com/#view=home&op=translate&sl=auto&tl=en&text=$2 302
-# trj (Google 译至日)
-^https:\/\/duckduckgo.com\/\?q=trj(\+|%20)([^&]+).+ https://translate.google.com/#view=home&op=translate&sl=auto&tl=ja&text=$2 302
+# yd   (有道)
+^https:\/\/duckduckgo.com\/\?q=yd\+([^&]+).+ http://dict.youdao.com/search?q=$1 302
+# trc  (Google 译至中)
+^https:\/\/duckduckgo.com\/\?q=trc\+([^&]+).+ https://translate.google.com/#view=home&op=translate&sl=auto&tl=zh-CN&text=$1 302
+# tre  (Google 译至英)
+^https:\/\/duckduckgo.com\/\?q=tre\+([^&]+).+ https://translate.google.com/#view=home&op=translate&sl=auto&tl=en&text=$1 302
+# trj  (Google 译至日)
+^https:\/\/duckduckgo.com\/\?q=trj\+([^&]+).+ https://translate.google.com/#view=home&op=translate&sl=auto&tl=ja&text=$1 302
 
 # > 社区
 # db：豆瓣
@@ -171,7 +156,7 @@ DeepLtoJapanese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlj(\
 # ddg: DuckDuckGo 
 ^https:\/\/duckduckgo.com\/\?q=ddg\+([^&]+).+ https://duckduckgo.com/?ia=about&q=$1 302
 # 无指令: google
-^https:\/\/duckduckgo.com\/\?q=([^&]+).+ https://www.google.com/search?
+^https:\/\/duckduckgo.com\/\?q=([^&]+).+ https://www.google.com/search?q=$1 302
 
 # > Apple
 # ios (Apple Store应用搜索)
