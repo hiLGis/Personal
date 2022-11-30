@@ -37,6 +37,7 @@
 # tb: 淘宝
 # tm: 天猫
 
+# cpx：(cupfox)
 # ac: Acfun
 # bli: 哔哩哔哩
 # ytb: YouTube
@@ -59,13 +60,13 @@
 # 无指令则转 google 搜索
 
 [Script]
-# dlc xxx (DeepL 译至中)
+# dlc (DeepL 译至中)
 DeepLtoChinese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlc(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
 
-# dle xxx (DeepL 译至英)
+# dle (DeepL 译至英)
 DeepLtoEnglish = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dle(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
 
-# dlj xxx (DeepL 译至日)
+# dlj (DeepL 译至日)
 DeepLtoJapanese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlj(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
 
 
@@ -131,6 +132,8 @@ DeepLtoJapanese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlj(\
 ^https:\/\/duckduckgo.com\/\?q=tm\+([^&]+).+ https://s.m.tmall.com/m/search.htm?q=$1 302
 
 # > 视频资源
+# cpx (cupfox)
+^https:\/\/duckduckgo.com\/\?q=cpx\+([^&]+).+ https://cupfox.app/search?key=$1 302
 # ac (Acfun)
 ^https:\/\/duckduckgo.com\/\?q=ac\+([^&]+).+ https://www.acfun.cn/search?keyword==$1 302
 # bli (哔哩哔哩) 
