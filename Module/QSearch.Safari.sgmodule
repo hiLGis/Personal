@@ -58,8 +58,6 @@
 # ddg: DuckDuckGo 搜索
 # 无指令则转 google 搜索
 
-# 分割线——————————————————————————
-
 [Script]
 # dlc xxx (DeepL 译至中)
 DeepLtoChinese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlc(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
@@ -160,7 +158,6 @@ DeepLtoJapanese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlj(\
 # 无指令: google
 ^https:\/\/duckduckgo.com\/\?q=([^&]+).+ https://www.google.com/search?q=$1 302
 
-# 分割线——————————————————————————
 
 [MITM]
 hostname = %APPEND% duckduckgo.com
