@@ -7,7 +7,6 @@
 # > Boxjs
 force-http-engine-hosts = %APPEND% boxjs.net, boxjs.com
 
-
 [Script]
 # > Boxjs
 会话数据 = type=http-request,pattern=https?:\/\/boxjs\.(com|net),script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120
@@ -70,4 +69,3 @@ Grow解锁 = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v\d\/s
 
 [MITM]
 hostname = %APPEND% account.wps.cn,*account.wps.com,biz.caiyunapp.com, pan.baidu.com, api.shayujizhang.com,ap*.intsig.net,restore-access.indream.app,api.revenuecat.com,sub.store,m.douban.com,boxer.baidu.com,api.aliyundrive.com
-[Script]
