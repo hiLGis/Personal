@@ -19,6 +19,10 @@
 # trc: Google 译至中
 # tre: Google 译至英
 # trj: Google 译至日
+# dlc: DeepL 译至中
+# dle: DeepL 译至英
+# dlj: DeepL 译至日
+
 
 # db: 豆瓣搜索
 # zh: 知乎
@@ -54,6 +58,15 @@
 # ec: Ecosia 搜索
 # ddg: DuckDuckGo 搜索
 # 无指令则转 google 搜索
+
+[Script]
+# dlc xxx (DeepL 译至中)
+DeepLtoChinese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlc(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
+# dle xxx (DeepL 译至英)
+DeepLtoEnglish = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dle(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
+# dlj xxx (DeepL 译至日)
+DeepLtoJapanese = type=http-request,pattern=^https:\/\/duckduckgo.com\/\?q=dlj(\+|%20)([^&]+).+,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/DeepLQ-search.js
+
 
 [URL Rewrite]
 # > 图片
