@@ -48,7 +48,31 @@ DOMAIN-SUFFIX,applvn.com,REJECT
 (^https?:\/\/*\.\w{4}okv.com\/.+&.+)(\d{2}\.3\.\d)(.+) $118.0$3 302
 ^(https?:\/\/(tnc|dm)[\w-]+\.\w+\.com\/.+)(\?)(.+) $1$3 302
 
+
+
+
+
+
 [Script]
+# > WPS会员 (account.wps.cn,*account.wps.com)
+WPS会员 = type=http-response,pattern=^https?:\/\/.*?account\.wps\.(com|cn)(:\d+)?\/api\/users\/\w+\/overview$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/WPSOffice/Script/WPS.js,script-update-interval=0
+# > 彩云天气 SVIP (biz.caiyunapp.com)
+彩云天气 SVIP = type=http-response, pattern=https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user), requires-body=1, max-size=-1, script-path=https://raw.githubusercontent.com/chiupam/surge/main/scripts/unblock/ColorfulClouds_SVIP.js, script-update-interval=0, timeout=60
+# > 百度网盘 SVIP (pan.baidu.com)
+百度网盘 SVIP = type=http-response, pattern=https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user, requires-body=1, max-size=-1, script-path=https://raw.githubusercontent.com/chiupam/surge/main/scripts/unblock/BaiduCloud.js, script-update-interval=0, timeout=60
+# > 鲨鱼记账 SVIP (api.shayujizhang.com)
+鲨鱼记账 SVIP = type=http-response, pattern=https:\/\/api\.shayujizhang\.com\/account\/grant\/detail\/info, requires-body=1, max-size=-1, script-path=https://raw.githubusercontent.com/chiupam/surge/main/scripts/unblock/SYJZ_SVIP.js, script-update-interval=0, timeout=60
+# > CamScanner SVIP (ap*.intsig.net)
+全能扫描王 SVIP = type=http-response, pattern=^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?, requires-body=1, max-size=-1, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/CamScanner.js
+# > Nicegram (restore-access.indream.app)
+Nicegram会员 = type=http-request,pattern=^https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\w+$,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/Nicegram/Script/Nicegram.js,script-update-interval=0
+# > Grow 解锁 (api.revenuecat.com)
+Grow恢复 = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v\d\/receipts$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/QuantumultX/main/JavaScript/Grow.js,script-update-interval=0
+Grow解锁 = type=http-response,pattern=^https?:\/\/api\.revenuecat\.com\/v\d\/subscribers\/(\$RCAnonymousID\%)?(\w)+$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/QuantumultX/main/JavaScript/Grow.js,script-update-interval=0
+
+
+
+
 # > Spark 解锁、Forza Football解锁
 通用解锁 = type=http-response,pattern=https:\/\/api\.revenuecat\.com,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/githubdulong/Script/master/revenuecat.js,script-update-interval=-1
 # > 京东App 历史价格 
@@ -131,5 +155,19 @@ Nicegram = type=http-response,pattern=^https?:\/\/restore-access\.indream\.app\/
 //定位修改 按需启用 https://raw.githubusercontent.com/VirgilClyne/iRingo/main/sgmodule/Location.sgmodule
 //模块更新捷径 https://www.icloud.com/shortcuts/67c3ace4fb3a4f9ebbe8d3184cd82e39
 
+#!https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/WPSOffice/Surge.sgmodule
+#!https://raw.githubusercontent.com/Voldeemort/Surge/main/script/dida/dida.sgmodule
+#!https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/KuWoMusic/KuWoMusic.Surge.sgmodule
+#!https://raw.githubusercontent.com/SuperLingyun/surge/main/unlockvip.sgmodule
+#!https://raw.githubusercontent.com/chiupam/surge/main/Surge/Unblock.sgmodule
+#!https://raw.githubusercontent.com/rartv/SurgeScript/main/EmbyPremiere/EmbyPremiere.sgmodule
+#!https://raw.githubusercontent.com/chiupam/surge/main/Surge/CamScanner.sgmodule
+#!https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/Nicegram/Surge.sgmodule
+#!https://raw.githubusercontent.com/xOS/Config/Her/Module/iOS/GeneralRules.sgmodule
+#!https://raw.githubusercontent.com/Godrock/Profiles/main/Surge/Module/Grow.sgmodule
 [MITM]
 hostname = %APPEND% *.tiktokv.com, *.byteoversea.com, *.tik-tokapi.com, api.m.jd.com, sub.store, *.bilibili.com, ap?.biliapi.net, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, -*.weibo.com, ap*.intsig.net, dayone.*, pan.baidu.com, bmall.camera360.com, vsco.co, boxer.baidu.com, lcs-mobile-cops.adobe.io, biz.caiyunapp.com, m.douban.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, boxjs.net, boxjs.com, account.wps.cn, mb3admin.com, nomo.dafork.com, user-kaji-api.b612kaji.com, buy.itunes.apple.com, restore-access.indream.app, api.aliyundrive.com, api.revenuecat.com
+
+[MITM]
+hostname = %APPEND% account.wps.cn,*account.wps.com,biz.caiyunapp.com, pan.baidu.com, api.shayujizhang.com,ap*.intsig.net,restore-access.indream.app,api.revenuecat.com
+[Script]
