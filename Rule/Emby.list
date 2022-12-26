@@ -4,6 +4,9 @@
 # > 流媒体emby-misakaf服务器
 DOMAIN,cf2.misakaf.org
 
+# > ATVLI服务器
+DOMAIN,fire.atvii.com
+
 # > Odyssey+服务器
 DOMAIN,cf.odysseyplus.site
 DOMAIN,us.odysseyplus.site
