@@ -1,13 +1,15 @@
 # > NAME: Emby
 # > UPDATED: 2022-10-02
 
+# > Cc服务器（15天登陆一次）
+DOMAIN-KEYWORD,cc.ccemby
+
 # > 流媒体emby-misakaf服务器
 DOMAIN,cf2.misakaf.org
 DOMAIN,cdn.misakaf.org
 
 # > 星云 20天登陆一次  月70分
 DOMAIN,direct.nebula-emby.com
-
 
 # > ATVLI服务器
 DOMAIN,fire.atvii.com
@@ -67,9 +69,6 @@ DOMAIN,kr.embymv.tk
 
 # > infinity-fly服务器（15天登陆一次）
 DOMAIN,infinityfly.top
-
-# > Cc服务器（15天登陆一次）
-DOMAIN,cc.ccemby.tk
 
 # > gfwemby
 DOMAIN,us-s2.gfwemby.org
