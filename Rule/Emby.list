@@ -1,84 +1,18 @@
 # > NAME: Emby
-# > UPDATED: 2022-10-02
+# > UPDATED: 2023-03-18
 
 # > Cc服务器（15天登陆一次）
 DOMAIN-KEYWORD,ccemby
 
-# > 流媒体emby-misakaf服务器
+# > Misakaf服务器
 DOMAIN,cf2.misakaf.org
 DOMAIN,cdn.misakaf.org
+
+# > MisakaF-Porn服务器
+DOMAIN,porn.misakaf.org
 
 # > 星云 20天登陆一次  月70分
 DOMAIN,direct.nebula-emby.com
 
 # > ATVLI服务器
 DOMAIN,fire.atvii.com
-
-# > Odyssey+服务器
-DOMAIN,cf.odysseyplus.site
-DOMAIN,us.odysseyplus.site
-DOMAIN,kr.odysseyplus.site
-DOMAIN,jp.odysseyplus.site
-DOMAIN,jp2.odysseyplus.site
-
-# > 终点站服务器
-DOMAIN,pub1.emby.wtf
-DOMAIN,pub2.emby.wtf
-DOMAIN,pub3.emby.wtf
-DOMAIN,pub4.emby.wtf
-
-# > 卷毛鼠服务器
-DOMAIN,cf.jmsooo.com
-DOMAIN,ha.jmsooo.com
-
-# > MisakaF服务器
-DOMAIN,cf.misakaf.org
-DOMAIN,4837.misakaf.org
-
-# > MisakaF-Porn服务器
-DOMAIN,porn.misakaf.org
-
-# > Misty服务器（21天登陆一次）
-DOMAIN,aaa.ax
-DOMAIN,hk.aaa.ax
-
-# > BlueSeaMusic音乐服
-DOMAIN,blueseamusics.com
-
-# > BlueSea公益服
-DOMAIN,emby-pub1.blueseacdn.com
-
-# > Froghub服务器
-DOMAIN,178.173.230.8
-
-# > MJJ EMBY服务器（45天登陆一次）
-DOMAIN,de.mjjemby.org
-DOMAIN,cf.mjjemby.org
-DOMAIN,sg01.mjjemby.org
-DOMAIN,kr01.mjjemby.org
-DOMAIN,kr02.mjjemby.org
-
-# > Orange服务器（15天登陆一次）
-DOMAIN,embytv.cf
-
-# > peach服务器（15天登陆一次）
-DOMAIN,embymv.tk
-DOMAIN,emby-peach.blueseacdn.com
-DOMAIN,us.embymv.tk
-DOMAIN,kr.embymv.tk
-
-# > infinity-fly服务器（15天登陆一次）
-DOMAIN,infinityfly.top
-
-# > gfwemby
-DOMAIN,us-s2.gfwemby.org
-DOMAIN,us-s1.gfwemby.org
-DOMAIN,aws-us.gfwemby.org
-DOMAIN,aws-jp.gfwemby.org
-
-//none
-# > Singularity服务器
-DOMAIN,singularity.deja-vu.beauty
-
-# > DH二车服务器
-DOMAIN,51.79.222.233
