@@ -1,5 +1,5 @@
-#!name= limbo Adblock
-#!desc= limbo 去网页广告 For Surge
+#!name= Ad_limbo
+#!desc= Adblock
 # https://limbopro.com/Adblock4limbo.sgmodule
 
 [URL Rewrite]
