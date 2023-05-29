@@ -1,6 +1,6 @@
 #!name= Ad_limbo
 #!desc= Adblock
-# https://limbopro.com/Adblock4limbo.sgmodule
+#!https://limbopro.com/Adblock4limbo.sgmodule
 
 [URL Rewrite]
 # missav 播放页弹窗
