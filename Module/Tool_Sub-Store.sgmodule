@@ -1,0 +1,9 @@
+#!name=Tool_Sub-Store
+#!desc=Sub-Store Cache
+#!https://github.com/xream/Sub-Store/tree/feature/scriptResourceCache
+
+[MITM]
+hostname= %APPEND% sub.store
+
+[Script]
+Sub-Store = type=http-request,pattern=^https?:\/\/sub\.store,requires-body=true,timeout=120,max-size=131072,ability=http-client-policy,script-update-interval=-1,script-path=https://github.com/Keywos/rule/raw/main/JS/sub-store.script.cache.js
