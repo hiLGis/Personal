@@ -1,27 +1,25 @@
 #!name=Ad_YouTube
 #!desc=Ad_YouTube
-#!author = Maasea 
+# > Feature
+# 删除 瀑布流、视频、搜索中出现的广告和Shorts
+# 删除 Shorts 内的视频广告
+# 删除 底部 上传 按钮
+# 增加 画中画(PIP), 后台播放 (Beta)
+# 增加 自动翻译 (Thanks @VirgilClyne)
 
-#!homepage = https://github.com/deezertidal
+# > Note
+# 广告信息会有遗漏，可能偶现广告
+# 该模块已足够全面，无需其他规则混用，防止重写规则被破坏
+# 不支持 Mock 的客户端可以用 reject-200/reject-img 替代
 
-#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
-
-
-
-[URL Rewrite]
-
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad _ REJECT-IMG
-
-
+# > Credit 
+# @Choler & @DivineEngine & @app2smile
 
 [Script]
+youtube = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,requires-body=1,binary-body-mode=1,max-size=3145728,script-path=https://raw.githubusercontent.com/mikoycc/surge/main/module/youtube/youtube.js
 
-youtube = type=http-response,script-path= https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.js,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,max-size=131072,requires-body=true,binary-mode=true,timeout=10,script-update-interval=0,enable=true
-
-
-
-
+[Map Local]
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/mikoycc/surge/main/module/youtube/blank.txt" header="Content-Type: application/vnd.yt-ump"
 
 [MITM]
-
 hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com
