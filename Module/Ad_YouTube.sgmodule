@@ -1,14 +1,27 @@
 #!name=Ad_YouTube
 #!desc=Ad_YouTube
+#!author = Maasea 
 
-# > Credit
-# @Choler & @DivineEngine & @app2smile
+#!homepage = https://github.com/deezertidal
+
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+
+
+
+[URL Rewrite]
+
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad _ REJECT-IMG
+
+
 
 [Script]
-youtube = type=http-response, pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?, requires-body=1, binary-body-mode=1, max-size=3145728, script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.js
 
-[Map Local]
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/blank.txt" header="Content-Type: application/vnd.yt-ump"
+youtube = type=http-response,script-path= https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.js,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,max-size=131072,requires-body=true,binary-mode=true,timeout=10,script-update-interval=0,enable=true
+
+
+
+
 
 [MITM]
+
 hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com
