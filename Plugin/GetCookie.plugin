@@ -6,9 +6,9 @@
 #!date = 2023-10-11 22:05:56
 
 [MITM]
-hostname = app.moutai519.com.cn,bg-hardcore.ab-inbev.cn,iacc.rec.qq.com,*.xbiao.com,prod.rewardsplatform.microsoft.com,apph5.manmanbuy.com,user-api.smzdm.com,api.tuhu.cn,yunbusiness.ccb.com,*.amap.com,mall.telunsu.net,api.yqslmall.com,rewards.bing.com,www.bing.com,cn.bing.com,mall.oclean.com,ccsp-egmas.sf-express.com,auth.alipan.com,auth.aliyundrive.com
+hostname = app.bilibili.com, m.bilibili.com,app.moutai519.com.cn,webapi.qmai.cn,apph5.manmanbuy.com,user-api.smzdm.com,yunbusiness.ccb.com,*.amap.com,mall.telunsu.net,ccsp-egmas.sf-express.com
 
-#i茅台 app.moutai519.com.cn,#HAPI哈啤硬核街 bg-hardcore.ab-inbev.cn,#腾讯视频 iacc.rec.qq.com,#腕表之家 *.xbiao.com,#bing阅读 prod.rewardsplatform.microsoft.com #慢慢买签到 apph5.manmanbuy.com #什么值得买签到&抽奖 user-api.smzdm.com #途虎app(小程序)签到 api.tuhu.cn #建行生活 yunbusiness.ccb.com #高德地图 *.amap.com #微信小程序特仑苏官方商城 mall.telunsu.net #元气森林会员中心 api.yqslmall.com #bing积分签到 rewards.bing.com #Bing搜索 www.bing.com,cn.bing.com #欧可林 mall.oclean.com #顺丰 ccsp-egmas.sf-express.com #阿里云盘 auth.alipan.com,auth.aliyundrive.com
+#B站 app.bilibili.com, m.bilibili.com #i茅台 app.moutai519.com.cn,#慢慢买签到 apph5.manmanbuy.com #什么值得买签到&抽奖 user-api.smzdm.com #建行生活 yunbusiness.ccb.com #高德地图 *.amap.com #微信小程序特仑苏官方商城 mall.telunsu.net #顺丰 ccsp-egmas.sf-express.com
 
 [Script]
 # BiliBili（APP）
@@ -23,7 +23,7 @@ http-request ^https:\/\/app\.moutai519\.com\.cn\/xhr\/front\/mall\/message\/unRe
 
 # 霸王茶姬（小程序）
 # > 方法:打开霸王茶姬小程序签到一次
-霸王茶姬获取Cookie = type=http-request,pattern=^https?:\/\/webapi\.qmai\.cn\/web\/catering\/integral\/sign\/signIn,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/bwcj_token.js
+http-request ^https?:\/\/webapi\.qmai\.cn\/web\/catering\/integral\/sign\/signIn,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/bwcj_token.js, tag=霸王茶姬获取Cookie,enabled=true
 
 #慢慢买签到
 http-request ^https?:\/\/apph5\.manmanbuy\.com\/taolijin\/(login.aspx|logserver.aspx) script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/manmanbuy/manmanbuy_checkin.js,requires-body=1,tag=慢慢买_获取cookie
