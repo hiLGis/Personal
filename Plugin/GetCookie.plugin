@@ -1,1 +1,60 @@
+#!name= HiLG_CK
+#!desc= Cookie获取
+#!author= 
+#!homepage=  
+#!icon= https://raw.githubusercontent.com/Raphael689/RW/master/iCons/RW689.png
+#!date = 2023-10-11 22:05:56
+
+[MITM]
+hostname = app.moutai519.com.cn,bg-hardcore.ab-inbev.cn,iacc.rec.qq.com,*.xbiao.com,prod.rewardsplatform.microsoft.com,apph5.manmanbuy.com,user-api.smzdm.com,api.tuhu.cn,yunbusiness.ccb.com,*.amap.com,mall.telunsu.net,api.yqslmall.com,rewards.bing.com,www.bing.com,cn.bing.com,mall.oclean.com,ccsp-egmas.sf-express.com,auth.alipan.com,auth.aliyundrive.com
+
+#i茅台 app.moutai519.com.cn,#HAPI哈啤硬核街 bg-hardcore.ab-inbev.cn,#腾讯视频 iacc.rec.qq.com,#腕表之家 *.xbiao.com,#bing阅读 prod.rewardsplatform.microsoft.com #慢慢买签到 apph5.manmanbuy.com #什么值得买签到&抽奖 user-api.smzdm.com #途虎app(小程序)签到 api.tuhu.cn #建行生活 yunbusiness.ccb.com #高德地图 *.amap.com #微信小程序特仑苏官方商城 mall.telunsu.net #元气森林会员中心 api.yqslmall.com #bing积分签到 rewards.bing.com #Bing搜索 www.bing.com,cn.bing.com #欧可林 mall.oclean.com #顺丰 ccsp-egmas.sf-express.com #阿里云盘 auth.alipan.com,auth.aliyundrive.com
+
+[Script]
+# BiliBili（APP）
+# > 方法_1:打开B站APP
+http-request ^https:\/\/app\.bilibili\.com\/x\/resource\/domain\?,script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/BiliBili.js, tag=B站获取Cookie(APP),enabled=true
+# > 方法_2:打开B站网页
+http-request ^https:\/\/m.bilibili.com/$,script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/BiliBili.js, tag=B站获取Cookie(网页),enabled=true
+ 
+# i茅台（APP）
+# > 方法:打开i茅台APP（1个月有效）
+http-request ^https:\/\/app\.moutai519\.com\.cn\/xhr\/front\/mall\/message\/unRead\/query,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/i-maotai.js, tag=i茅台获取Cookie,enabled=true
+
+# 霸王茶姬（小程序）
+# > 方法:打开霸王茶姬小程序签到一次
+霸王茶姬获取Cookie = type=http-request,pattern=^https?:\/\/webapi\.qmai\.cn\/web\/catering\/integral\/sign\/signIn,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/bwcj_token.js
+
+#慢慢买签到
+http-request ^https?:\/\/apph5\.manmanbuy\.com\/taolijin\/(login.aspx|logserver.aspx) script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/manmanbuy/manmanbuy_checkin.js,requires-body=1,tag=慢慢买_获取cookie
+
+#什么值得买签到&抽奖
+http-request ^https?:\/\/user-api\.smzdm\.com\/checkin$ script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,tag=什么值得买_获取Cookie
+
+#建行生活
+http-request ^https:\/\/yunbusiness\.ccb\.com\/clp_coupon\/txCtrl\?txcode=A3341A040 script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/jhsh_checkIn.js, requires-body=true, tag=建行数据
+
+#高德地图
+http-response ^https:\/\/(m5(|-zb)|dache)\.amap\.com\/(ws\/yuece\/(act|openapi\/activity\/current)\/query|common\/(alipaymini|wxmini)\?_ENCRYPT=) script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, requires-body=true, timeout=60 ,tag=高德打车
+高德地图
+
+#微信小程序特仑苏官方商城
+http-request ^https:\/\/mall\.telunsu\.net\/wxapi\/rest\/getUser\?openid=.+ script-path=https://raw.githubusercontent.com/Raphael689/RW/master/Scripts/tls.js, timeout=10, tag=特仑苏官方商城获取token
+
+#元气森林会员中心
+http-request ^https:\/\/api\.yqslmall\.com\/mall-member\/member\/info script-path=https://raw.githubusercontent.com/Raphael689/RW/master/Scripts/yqslhy.js, timeout=10, tag=元气森林获取token
+
+#Bing积分签到
+http-request https:\/\/rewards\.bing\.com script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js, tag=Bing积分签到
+
+#Bing搜索
+##外区: 也可以用于获取国区cookie,执行任务无效请打开"强制国区"开关
+http-request ^https\:\/\/www\.bing\.com\/search\?q=pc&.* script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/Bing/bingSearch/bingSearch.cookie.js, timeout=10, tag=bingSearch
+http-request ^https\:\/\/www\.bing\.com\/search\?q=testt&.* script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/Bing/bingSearch/bingSearch.cookie.js, timeout=10, tag=bingSearch
+##国区
+http-request ^https\:\/\/cn\.bing\.com\/search\?q=pc&.* script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/Bing/bingSearch/bingSearch.cookie.js,timeout=10, tag=bingSearchCN
+http-request ^https\:\/\/cn\.bing\.com\/search\?q=testt&.* script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/Bing/bingSearch/bingSearch.cookie.js,timeout=10, tag=bingSearchCN
+
+#顺丰签到
+http-request ^https:\/\/ccsp-egmas.sf-express.com\/cx-app-member\/member\/app\/user\/universalSign script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/sfexpress/sfexpress.cookie.js, requires-body=true, tag=顺丰APP获取cookie
 
