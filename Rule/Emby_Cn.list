@@ -1,0 +1,15 @@
+# 直连
+DOMAIN-SUFFIX,zwei.bgka.me
+//DOMAIN-KEYWORD,misakaf
+DOMAIN-SUFFIX,cc.ccemby.tk
+DOMAIN-SUFFIX,dx1.carryz.net
+DOMAIN-SUFFIX,dx2.ccemby.ga
+DOMAIN-SUFFIX,cc.ccemby.ml
+DOMAIN-SUFFIX,embymv.me
+DOMAIN-SUFFIX,embymv.tk
+#DOMAIN-SUFFIX,otv.icu // 橘子
+#DOMAIN-KEYWORD,gugumedia // GuGu
+DOMAIN-SUFFIX,pm.xmsl.org
+IP-CIDR, 89.58.63.237/32,no-resolve
+DOMAIN-SUFFIX,un.1321565613.xyz
+DOMAIN-SUFFIX,jz.mcjoker.xyz
