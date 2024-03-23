@@ -68,22 +68,23 @@ dns:
 ###建立锚点
     
 # 策略组引用相关参数
-pg: &pg {type: select, proxies: [手动切换, 香港节点, 美国节点, 狮城节点, 日本节点,  台湾节点, 自动选择, 故障转移, DIRECT]}
+pg: &pg {type: select, proxies: [手动切换, 香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, 自动选择, 故障转移, DIRECT]}
+Ac: &pg {type: select, proxies: [香港节点, 美国节点, 狮城节点, 日本节点, 台湾节点, DIRECT]}
 
 # 订阅更新和延迟测试相关参数
-p: &p {type: http, interval: 86400, health-check: {enable: true, url: http://1.1.1.1/generate_204, interval: 1800}}
+p: &p {type: http, interval: 86400, health-check: {enable: true, url: http://cp.cloudflare.com/generate_204, interval: 1800}}
 
 # 自动选择策略组：选取延迟最低节点
-auto: &auto {type: url-test, lazy: true, url: http://1.1.1.1/generate_204, interval: 900, use: [Subscribe]}
+auto: &auto {type: url-test, lazy: true, url: http://cp.cloudflare.com/generate_204, interval: 900, use: [Subscribe]}
 
 # 手动选择策略组：手动选择想要的节点/策略组
 select: &select {type: select, use: [Subscribe]}
 
 # 故障回退策略组：策略组将按顺序选择你列表中第一个可用的节点
-fallback: &fallback {type: fallback, lazy: true, url: http://1.1.1.1/generate_204, interval: 900, use: [Subscribe]}
+fallback: &fallback {type: fallback, lazy: true, url: http://cp.cloudflare.com/generate_204, interval: 900, use: [Subscribe]}
 
 # 负载均衡策略组：不同的请求将使用不同的代理节点
-load-balance: &load-balance {type: load-balance, lazy: true, url: http://1.1.1.1/generate_204, interval: 900, use: [Subscribe]}
+load-balance: &load-balance {type: load-balance, lazy: true, url: http://cp.cloudflare.com/generate_204, interval: 900, use: [Subscribe]}
 
 # classical规则相关
 c: &c {type: http, behavior: classical, interval: 86400}
@@ -109,25 +110,25 @@ proxy-groups:
 
   - {name: 手动切换, type: select, use: [Subscribe], icon: https://github.com/clash-verge-rev/clash-verge-rev/raw/main/src/assets/image/logo.png, }
 
-  - {name: 国外网站, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png}
+  - {name: 国外网站, type: select, use: [Subscribe], icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png}
 
   - {name: 国际媒体, <<: *select, filter: "(?i)0.2|(\b(0.2)\b)", icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png}
+  
+  - {name: Emby, <<: *select, proxies: [手动切换,DIRECT], filter: "(?i)0.2|(\b(0.2)\b)", icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png}
 
-  - {name: 苹果服务, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png}
+  - {name: 苹果服务, type: select, proxies: [DIRECT, 美国节点], icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png}
 
-  - {name: 微软服务, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png}
+  - {name: 微软服务, type: select, proxies: [DIRECT, 香港节点], icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png}
 
-  - {name: 谷歌服务, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png}
+  - {name: 谷歌服务, <<: *Ac, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png}
 
-  - {name: 电报消息, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png}
+  - {name: 电报消息, <<: *select, filter: "(?i)0.2|(\b(0.2)\b)", icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png}
 
-  - {name: 推特消息, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png}
+  - {name: 推特消息, <<: *Ac, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png}
 
-  - {name: OpenAI, <<: *pg, icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png}
+  - {name: OpenAI,  <<: *select, filter: "(?i)美国|(\b(美国)\b)", icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png}
 
-  - {name: 游戏平台, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png}
-
-  - {name: Emby,  <<: *select, proxies: [手动切换,DIRECT], filter: "(?i)0.2|(\b(0.2)\b)", icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png}
+  - {name: 游戏平台, <<: *Ac, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png}
 
   - {name: 哔哩哔哩, type: select, proxies: [DIRECT, 香港节点, 台湾节点], icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili.png}
 
