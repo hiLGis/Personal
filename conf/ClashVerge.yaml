@@ -196,10 +196,10 @@ rule-providers:
  ChinaDomain: {<<: *c, format: text, path: ./rule-providers/ChinaDomain.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/ChinaDomain.list}
 
  # EmbyCn
- EmbyCn: {<<: *c, format: text, path: ./rule-providers/EmbyCn.list,  url: https://raw.githubusercontent.com/hiLGis/Clash/main/Rule/Emby_Cn.list?token=GHSAT0AAAAAACP7XXHHMPYVWWXCA5IWYJOUZP6P4AQ}
+ EmbyCn: {<<: *c, format: text, path: ./rule-providers/EmbyCn.list,  url: https://raw.githubusercontent.com/hiLGis/Personal/main/Rule/Emby_Cn.list}
  
  # EmbyPr
- EmbyPr: {<<: *c, format: text, path: ./rule-providers/EmbyPr.list,  url: https://raw.githubusercontent.com/hiLGis/Clash/main/Rule/Emby_Pr.list?token=GHSAT0AAAAAACP7XXHGRHM37P2WX67RAT6YZP6P4SA}
+ EmbyPr: {<<: *c, format: text, path: ./rule-providers/EmbyPr.list,  url: https://raw.githubusercontent.com/hiLGis/Personal/main/Rule/Emby_Pr.list}
 
  # 国际媒体
  ProxyMedia: {<<: *c, format: text, path: ./rule-providers/ProxyMedia.list,  url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/ProxyMedia.list}
